@@ -39,7 +39,7 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     await remove(id);
     res.status(200).json({ message: 'Contratante excluído com sucesso' });
-  } catch (error: any) { // Isso pode ser ajustado para `unknown` se você quiser mais segurança
+  } catch (error: any) { 
     console.error('Erro ao excluir contratante:', error); // Log do erro
     res.status(400).json({ message: 'Erro ao excluir contratante', error: error.message });
   }

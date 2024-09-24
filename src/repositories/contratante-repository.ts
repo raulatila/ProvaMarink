@@ -14,10 +14,10 @@ export const create = async (data: IContratante) => {
 
 export const update = async (id: string, data: Partial<IContratante>) => {
   if (data.email) {
-    // Aqui, tipamos a variável como IContratante ou null
+    //  IContratante ou null
     const existingContratante: IContratante | null = await Contratante.findOne({ email: data.email });
 
-    // Verifica se existe um contratante e se o ID não é o mesmo do atual
+    // Verifica  o ID não é o mesmo do atual
     if (existingContratante && existingContratante._id && existingContratante._id.toString() !== id) {
       throw new Error(`O email ${data.email} já está em uso por outro contratante.`);
     }
